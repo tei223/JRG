@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jリーグどこで見れる？</title>
+  <meta name="description" content="Jリーグの無料配信、テレビ放送、ラジオ中継、試合速報、公式ハイライトをまとめて確認できる視聴ガイド。" />
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --text:#111827;
+      --sub:#6b7280;
+      --line:#e5e7eb;
+      --primary:#111827;
+      --blue:#2563eb;
+      --light:#f3f4f6;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{text-decoration:none;color:inherit}
+    header{
+      background:#0f172a;
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 0;
+      gap:16px;
+    }
+    .logo{
+      font-weight:800;
+      font-size:20px;
+    }
+    .menu{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      font-size:14px;
+    }
+    .hero{
+      background:#fff;
+      padding:64px 0 52px;
+      border-bottom:1px solid var(--line);
+    }
+    .hero h1{
+      font-size:42px;
+      line-height:1.2;
+      margin:0 0 16px;
+    }
+    .hero p{
+      color:var(--sub);
+      max-width:780px;
+      margin:0 0 24px;
+    }
+    .btns{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      border:1px solid transparent;
+    }
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-blue{background:var(--blue);color:#fff}
+    .btn-light{background:var(--light);color:var(--text);border-color:var(--line)}
+    section{
+      padding:42px 0;
+    }
+    .section-head{
+      margin-bottom:20px;
+    }
+    .section-head h2{
+      margin:0 0 8px;
+      font-size:28px;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--sub);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:18px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 4px 14px rgba(0,0,0,.04);
+    }
+    .meta{
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      color:var(--sub);
+      font-size:14px;
+      margin-bottom:6px;
+    }
+    .match-title{
+      margin:0 0 12px;
+      font-size:22px;
+      line-height:1.35;
+    }
+    .list{
+      list-style:none;
+      padding:0;
+      margin:0 0 14px;
+    }
+    .list li{
+      padding:4px 0;
+      border-bottom:1px dashed #eef2f7;
+      font-size:15px;
+    }
+    .list li:last-child{border-bottom:none}
+    .badge{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      background:#eff6ff;
+      color:#1d4ed8;
+      margin-bottom:10px;
+    }
+    .three{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+    }
+    .notice{
+      background:#fff7ed;
+      border:1px solid #fed7aa;
+      color:#9a3412;
+      padding:16px;
+      border-radius:14px;
+      font-size:14px;
+    }
+    footer{
+      margin-top:20px;
+      background:#0f172a;
+      color:#fff;
+      padding:36px 0;
+    }
+    footer p, footer li{
+      color:#cbd5e1;
+      font-size:14px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:24px;
+    }
+    @media (max-width:700px){
+      .hero h1{font-size:32px}
+      .footer-grid{grid-template-columns:1fr}
+      .nav{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="logo">Jリーグどこで見れる？</div>
+      <nav class="menu">
+        <a href="#today">今日の試合</a>
+        <a href="#free">無料で見られる試合</a>
+        <a href="#radio">ラジオ</a>
+        <a href="#highlights">ハイライト</a>
+        <a href="#guide">視聴ガイド</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>今日のJリーグ、どこで見れる？</h1>
+      <p>
+        無料配信、テレビ放送、ラジオ中継、試合速報、公式ハイライトをまとめて確認できる
+        Jリーグ視聴ガイドです。見られる試合は動画へ、見られない試合はラジオや速報へ案内します。
+      </p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#today">今日の試合を見る</a>
+        <a class="btn btn-blue" href="#free">無料で見られる試合</a>
+        <a class="btn btn-light" href="#radio">ラジオ中継を探す</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="notice">
+        当サイトは試合映像・試合音声を配信するサイトではありません。公式サイト、正規配信サービス、ラジオ放送、試合速報、公式ハイライトへの案内を目的とした情報サイトです。
+      </div>
+    </div>
+  </section>
+
+  <section id="today">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>今日の試合一覧</h2>
+        <p>本日のJリーグの試合を、見る・聴く・追うの3つの方法で分かりやすく整理しています。</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="meta">
+            <span>J1</span>
+            <span>19:00</span>
+          </div>
+          <h3 class="match-title">FC東京 vs 町田</h3>
+          <ul class="list">
+            <li><strong>動画:</strong> DAZN</li>
+            <li><strong>無料:</strong> なし</li>
+            <li><strong>ラジオ:</strong> 調布FM</li>
+            <li><strong>速報:</strong> Jリーグ公式</li>
+          </ul>
+          <div class="btns">
+            <a class="btn btn-primary" href="https://www.jleague.jp/dazn/lp/" target="_blank" rel="noopener noreferrer">見る</a>
+            <a class="btn btn-blue" href="https://www.jleague.jp/radio/" target="_blank" rel="noopener noreferrer">聴く</a>
+            <a class="btn btn-light" href="https://www.jleague.jp/game/" target="_blank" rel="noopener noreferrer">速報</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="meta">
+            <span>J1</span>
+            <span>16:00</span>
+          </div>
+          <h3 class="match-title">川崎F vs 浦和</h3>
+          <ul class="list">
+            <li><strong>動画:</strong> 配信情報を確認</li>
+            <li><strong>無料:</strong> なし</li>
+            <li><strong>ラジオ:</strong> かわさき市民放送</li>
+            <li><strong>速報:</strong> Jリーグ公式</li>
+          </ul>
+          <div class="btns">
+            <a class="btn btn-blue" href="https://www.jleague.jp/radio/search/j1/" target="_blank" rel="noopener noreferrer">聴く</a>
+            <a class="btn btn-light" href="https://www.jleague.jp/game/" target="_blank" rel="noopener noreferrer">速報</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="meta">
+            <span>J2 / J3</span>
+            <span>放送予定確認</span>
+          </div>
+          <h3 class="match-title">その他の試合</h3>
+          <ul class="list">
+            <li><strong>動画:</strong> Jリーグ公式の放送・配信情報へ</li>
+            <li><strong>ラジオ:</strong> ある試合はラジオ放送一覧へ</li>
+            <li><strong>速報:</strong> 試合速報ページで確認可能</li>
+          </ul>
+          <div class="btns">
+            <a class="btn btn-primary" href="https://www.jleague.jp/tv/" target="_blank" rel="noopener noreferrer">放送・配信を見る</a>
+            <a class="btn btn-blue" href="https://www.jleague.jp/radio/" target="_blank" rel="noopener noreferrer">ラジオを見る</a>
+            <a class="btn btn-light" href="https://www.jleague.jp/game/" target="_blank" rel="noopener noreferrer">速報を見る</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="free">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>無料で見られる試合</h2>
+        <p>無料LIVE、地上波・BS、公式ハイライトなど、お金をかけずに楽しめる導線をまとめています。</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="badge">無料候補</div>
+          <h3 class="match-title">DAZNの無料コンテンツを確認</h3>
+          <p>毎節無料LIVEや無料ハイライトなど、DAZN公式の無料対象をチェックします。</p>
+          <div class="btns">
+            <a class="btn btn-blue" href="https://www.dazn.com/ja-JP/home" target="_blank" rel="noopener noreferrer">DAZN公式へ</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="badge">地上波 / BS</div>
+          <h3 class="match-title">Jリーグ公式のテレビ放送一覧</h3>
+          <p>地上波やBS放送の有無は、Jリーグ公式のテレビ放送ページで確認できます。</p>
+          <div class="btns">
+            <a class="btn btn-primary" href="https://www.jleague.jp/tv/" target="_blank" rel="noopener noreferrer">テレビ放送を見る</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="badge">試合後無料</div>
+          <h3 class="match-title">公式ハイライト</h3>
+          <p>試合後はJリーグ公式ハイライト動画チャンネルで主要シーンを確認できます。</p>
+          <div class="btns">
+            <a class="btn btn-light" href="https://www.youtube.com/@jleaguehighl" target="_blank" rel="noopener noreferrer">ハイライトを見る</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="radio">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>見られない試合はラジオで</h2>
+        <p>映像配信がない試合でも、公式案内のあるラジオ中継や関連サービスへ案内できます。</p>
+      </div>
+
+      <div class="three">
+        <article class="card">
+          <h3>Jリーグ公式ラジオ放送</h3>
+          <p>リーグ・クラブ別のラジオ放送情報を確認できます。</p>
+          <div class="btns">
+            <a class="btn btn-primary" href="https://www.jleague.jp/radio/" target="_blank" rel="noopener noreferrer">ラジオ放送一覧</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>radikoで聴く</h3>
+          <p>Jリーグ実況中継の特集ページから、ラジオ放送を探せます。</p>
+          <div class="btns">
+            <a class="btn btn-blue" href="https://radiko.jp/r_seasons/10007227" target="_blank" rel="noopener noreferrer">radikoへ</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>ニッポン放送 Jリーグラジオ</h3>
+          <p>Jリーグラジオの案内ページです。</p>
+          <div class="btns">
+            <a class="btn btn-light" href="https://www.1242.com/soccer/" target="_blank" rel="noopener noreferrer">放送局ページへ</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="highlights">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>試合後はハイライト</h2>
+        <p>ライブで見られなかった試合も、試合後は公式ハイライトや試合速報で振り返れます。</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3 class="match-title">Jリーグ公式ハイライト動画チャンネル</h3>
+          <p>試合ハイライトをまとめて確認できます。</p>
+          <div class="btns">
+            <a class="btn btn-primary" href="https://www.youtube.com/@jleaguehighl" target="_blank" rel="noopener noreferrer">YouTubeで見る</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="match-title">試合速報・結果</h3>
+          <p>今日の試合速報、結果、関連情報をJリーグ公式で確認できます。</p>
+          <div class="btns">
+            <a class="btn btn-light" href="https://www.jleague.jp/game/" target="_blank" rel="noopener noreferrer">試合速報を見る</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>視聴ガイド</h2>
+        <p>Jリーグの配信・放送・ラジオ・速報の公式導線です。</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>配信で見る</h3>
+          <p>Jリーグ公式のDAZN案内ページ。</p>
+          <div class="btns">
+            <a class="btn btn-primary" href="https://www.jleague.jp/dazn/lp/" target="_blank" rel="noopener noreferrer">配信を見る</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>テレビで見る</h3>
+          <p>テレビ放送の有無を確認できます。</p>
+          <div class="btns">
+            <a class="btn btn-blue" href="https://www.jleague.jp/tv/" target="_blank" rel="noopener noreferrer">テレビ放送一覧</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>日程・速報を見る</h3>
+          <p>今日の試合や進行状況を確認できます。</p>
+          <div class="btns">
+            <a class="btn btn-light" href="https://www.jleague.jp/game/" target="_blank" rel="noopener noreferrer">速報ページへ</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <h3>Jリーグどこで見れる？</h3>
+        <p>
+          当サイトは、Jリーグの無料配信、テレビ放送、ラジオ放送、試合速報、公式ハイライト情報を整理する情報サイトです。
+          試合映像・試合音声そのものは配信しません。
+        </p>
+      </div>
+      <div>
+        <h3>公式リンク</h3>
+        <ul>
+          <li><a href="https://www.jleague.jp/game/" target="_blank" rel="noopener noreferrer">試合速報</a></li>
+          <li><a href="https://www.jleague.jp/tv/" target="_blank" rel="noopener noreferrer">テレビ放送</a></li>
+          <li><a href="https://www.jleague.jp/radio/" target="_blank" rel="noopener noreferrer">ラジオ放送</a></li>
+          <li><a href="https://www.jleague.jp/dazn/lp/" target="_blank" rel="noopener noreferrer">DAZN案内</a></li>
+          <li><a href="https://www.youtube.com/@jleaguehighl" target="_blank" rel="noopener noreferrer">公式ハイライト</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
